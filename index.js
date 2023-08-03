@@ -126,7 +126,7 @@ app.post("/writeTask", upload.single("pic"), (req, res) => {
   };
   TodoModel.create(tasks)
     .then(function () {
-      res.render("index", { email: req.session.email });
+      res.redirect("/index");
     })
     .catch(function (err) {
       console.log(err);
